@@ -25,61 +25,80 @@
      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
      />
 
+
     <!--CSS stylesheet from scratch linked-->
     <link href="./style.css" rel="stylesheet"/>
 
     <title>About Me</title>
   </head>
-  <body>
+  <body>    
     <main class="container-fluid">
-        <nav class="navbar navbar-dark bg-dark">
-            <h1>Weather Dashboard</h1>
-          </nav>
-        <aside class="row">
+        <nav class="navbar navbar-dark bg-primary">
+            <h1 id="weather-title">Weather Dashboard</h1>
+        </nav>
+        <section class="row">
             <div id="search-bar" class="col-xl m-5px pl-10px">Search bar</div>
             <div id="search-history"></div>
-        </aside>
+        </section>
         <section class="row">
-            <div class="col-md-6"></div>
             <h2 id="weather-display">Weather</h2>
-            <br>
             <ul class="row">
-                <div class="col-xs-12">
+                <div class="col-md-3">
                 <li id="city" class="col">city</li>
-                <br>
+
                 <li id="temp"class="col">temp</li>
-                <br>
+
                 <li id="humidity"class="col">humidity</li>
-                <br>
+
                 <li id="wind" class="col">wind speed</li>
-                <br>
+
                 <li id="uv-index"class="col">uv index</li>
                 </div>           
             </ul>
         </section>
-        <section class="row">
-            <div class="col-md-4"></div>
-            <h3>5-Day Forecast</h3>
-
-            <div class="card mb-3" style="max-width: 25rem;">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-
-                <div class="card mb-3" style="max-width: 25rem;">
-                    <div class="card-header">Day</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Primary card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-               
-                
+        <!-- Day 1 forecast -->
+        <form class="row">
+        <section class="col-md-2">
+              <div class="card">
+                <h3>day 1</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+              </div>
         </section>
-        
-
-
+         <!-- Day 2 forecast -->
+         <section class="col-md-2">
+              <div class="card">
+                <h3>day 2</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+              </div>
+        </section>
+         <!-- Day 3 forecast -->
+         <section class="col-md-2">
+              <div class="card">
+                <h3>day 3</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+              </div>
+        </section>
+         <!-- Day 4 forecast -->
+         <section class="col-md-2"> 
+              <div class="card">
+                <h3>day 4</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+              </div>
+        </section>
+         <!-- Day 5 forecast -->
+         <section class="col-md-2">
+              <div class="card">
+                <h3>day 5</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+              </div>
+        </section>
+    </form>
+          
        
     </main>
    
