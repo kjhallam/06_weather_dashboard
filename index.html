@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--CSS reset pages-->
     <link href="./reset.css" rel="stylesheet" />
 
-    <!--Bootstrap CSS-->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -15,94 +13,58 @@
       crossorigin="anonymous"
     />
 
-    <!--CSS retrieved from Google Fonts-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Questrial&display=swap"
-      rel="stylesheet"
-    />
-    <!--CSS for Link Icons in Footer-->
     <link
      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
      />
 
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!--CSS stylesheet from scratch linked-->
     <link href="./style.css" rel="stylesheet"/>
 
-    <title>About Me</title>
+    <title>Weather Dashboard</title>
+
   </head>
-  <body>    
-    <main class="container-fluid">
-        <nav class="navbar navbar-dark bg-primary">
-            <h1 id="weather-title">Weather Dashboard</h1>
-        </nav>
-        <section class="row">
-            <div id="search-bar" class="col-xl m-5px pl-10px">Search bar</div>
-            <div id="search-history"></div>
-        </section>
-        <section class="row">
-            <h2 id="weather-display">Weather</h2>
-            <ul class="row">
-                <div class="col-md-3">
-                <li id="city" class="col">city</li>
+<body>
+  <nav class="navbar d-flex">
+    <div class="navbar-header mb-1 h1">Weather Dashboard</div>
+  </nav>
 
-                <li id="temp"class="col">temp</li>
+  <main class="container d-flex-inline">
+    <div class="row">
+      <div class="col-md-4 search-column">
+        <form>
+          <h2>Search City:</h2>
+          <div class="input-field">
+            <input type="text" id="input-city" class = "ctrl-form" placeholder="Enter City">
+            <div class="input-field-append">
+              <button type="submit" id="sumbitBtn" class="btn btn-primary fas fa-search">
+              </button>
+            </div>
+          </div>
+        </form>
 
-                <li id="humidity"class="col">humidity</li>
+        <ul id="previousSearchLst" class="btn-group-vertical">
 
-                <li id="wind" class="col">wind speed</li>
+        </ul>
 
-                <li id="uv-index"class="col">uv index</li>
-                </div>           
-            </ul>
-        </section>
-        <!-- Day 1 forecast -->
-        <form class="row">
-        <section class="col-md-2">
-              <div class="card">
-                <h3>day 1</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-              </div>
-        </section>
-         <!-- Day 2 forecast -->
-         <section class="col-md-2">
-              <div class="card">
-                <h3>day 2</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-              </div>
-        </section>
-         <!-- Day 3 forecast -->
-         <section class="col-md-2">
-              <div class="card">
-                <h3>day 3</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-              </div>
-        </section>
-         <!-- Day 4 forecast -->
-         <section class="col-md-2"> 
-              <div class="card">
-                <h3>day 4</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-              </div>
-        </section>
-         <!-- Day 5 forecast -->
-         <section class="col-md-2">
-              <div class="card">
-                <h3>day 5</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-              </div>
-        </section>
-    </form>
-          
-       
+      </div>
+    </div>
+      <section class="col-md-8">
+        <div class="current-weather">
+          <h2>Current Weather Display</h2>
+        </div>
+        <div>
+          <h3>5-Day Forecast:</h3>
+          <div class="row" id="weather-forecast">
+        </div>
+        </div>
+      </section>
     </main>
-   
-    <script
+
+
+  <script data-main="scripts/main" src="scripts/require.js"></script>
+  
+  <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
@@ -117,5 +79,8 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-  </body>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
