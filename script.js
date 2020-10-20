@@ -1,27 +1,97 @@
-var apiKey = "ed2ee741f61d9d60983426ca204e9ed6";
-var currentWeatherSec = $("#current-weather");
-var forecastSec = $("#weather-forecast");
-var cityArr;
+var location = [];
+var lat;
+var lon;
+var placeName;
+var timestamp;
+var convdataTime;
+var image;
 
-if (localStorage.getItem ("localWeatherSearches")) {
-    cityArr = JSON.parse(localStorage.getItem("localWeatherSearches"));
-    writeSearchHistory(cityArr);
-} else {
-    cityArr = [];
+getCities ();
+function getCities() {
+    var storedCities = JSON.parse(localStorage.getItem('cities'));
+
+    if (storedCities !== null) {
+        locations = storedCities;
+    } else {
+        locations = ["Kansas City", "Destin"];
+    }
+    displayCities();
 }
 
-// WHEN I search for a city (input City (.val) + api () )
-    // I am presented with current and future conditions for that city
-    //that city is added to the search history
+function displayCities() {
+    for(var i = 0; i < locations.length; i++) {
+        var newCity = $("<li>");
+        newCity.text(locations[i]);
+        newCity.attr("class", "list-group-item");
+        $("ul").prepend(newCity);
+    }
+}
+$("#cityName").text($("li")[0].innerHTML);
+placeName = $("li")[0].innerHTML;
+getLocation();
 
-// WHEN I view current weather conditions for that city
-    // presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+$("button").on("click", function() {
+    if($("#searchInput").val() !== "") {
+        var newCity = $("#searchInput").val();
+        var list = $("<li>");
+        list.attr("class","list-group-item");
+        placeName = $("#searchInput").val();
+        getLocation();
+        locations = locations.concat(placeName);
+        localStorage.setItem("cities", JSON.stringify(locations));
+    };
+})
 
-// WHEN I view the UV index
-    // presented with a color that indicates whether the conditions are favorable, moderate, or severe
+function convert(timestamp) {
+    var unixtimestamp = timestamp;
+    var date = new Date(unixtimesstamp *1000);
+    convdataTime = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear();
+}
 
-// WHEN I view future weather conditions for that city
-    // presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+function getLocation() {
+    var queryURL = "" + placeName +
 
-// WHEN I click on a city in the search history
-    // presented with current and future conditions for that city
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        lat = response.results[0].geometry.lat;
+        lon = response.results[0].geometry.lng;
+        getWeather();
+    });
+}
+function getWeather () {
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=ed2ee741f61d9d60983426ca204e9ed6";
+}
+$.ajax ({
+    url: queryURL,
+    method: "GET"
+}).then(function (response){
+    console.log(response);
+
+    timestamp = response.current.dt;
+    convert(timestamp);
+    $("#cityName").text(placeName + "(" + convdataTime + ")");
+    image = response.current.weather[0].icon;
+    $("#currentImage").attr("src", "http://openweathermap.org/img/wn/" + image + ".png");
+    $("#temp").text("Temperature: " + response.current.temp + " F");
+    $("#humidity").text("Humidity: " + response.current.humidity + "%");
+    $("#windSpeed").text("Wind Speed: " + response.current.wind_speed + "MPH");
+    $("#uvIndex").text("UV Index: " + response.current.uvi);
+
+    for(var i = 1; i < 6; i++){
+        timestamp = response.daily[i].dt;
+        convert(timestamp);
+        $("#cardDate" + i).text(convdataTime);
+        image = response.daily[i].weather[0].icon;
+        console.log(image);
+        $("#cardImage" + i).attr("src","http://openweathermap.org/img/wn/" + image + ".png");
+        $("#cardTemp" + i).text("Temp: " + response.daily[i].temp.max + "F");
+        $("#cardHum" + i).text("Humidity: " + response.daily[i].humidity + "%");
+    }
+})
+
+$("li").on("click", function () {
+    placeName = this.innerHTML;
+    getLocation();
+})
