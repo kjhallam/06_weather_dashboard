@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Weather Dashboard</title>
 
-    <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="./reset.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
-  <title>weather Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+  
+  <link rel="stylesheet" href="./style.css">
+
+  
 </head>
 <body>
   <h1 class="jumbotron">Weather Dashboard</h1>
@@ -30,29 +37,35 @@
             </div>
           </div>
           <div class="row">
-            <ul class="list-group"></ul>
+            <ul id="cityList" class="list-group"></ul>
           </div>
         </nav>
       </aside>
 
-    <div class="col col-xl-6">
+    <div id="currentWeather" class="col col-kl-6 d-inline-flex">
       <section class="container">
         <div class="row forecastToday">
           <div class="container">
             <div class="row">
-              <h2 id="cityName" class="col-md-6"></h2>
+              <h2 id="cityName" class="col-md-4"></h2>
+              <br>
               <img id="currentImage" alt="Weather Image">
-              <ls id="temp"></ls>
-              <ls id="humidity"></ls>
-              <ls id="windSpeed"></ls>
-              <ls id="uvIndex"></ls>
+              <br>
+              <li id="temp"></li>
+              <br>
+              <li id="humidity"></li>
+              <br>
+              <li id="windspeed"></li>
+              <br>
+              <li id="uvIndex"></li>
+              <br><br>
             </div>
           </div>
           <div class="row">
             <h3>5-Day Forecast:</h3>
           </div>
           <div class="row d-inline-flex">
-            <section class="card text-white bg-primary" style="width: 7rem;">
+            <section class="card text-black bg-primary" style="width: 7rem;">
               <div class="card-body">
                 <h4 id="cardDate1" class="card-title"></h4>
                 <img id="cardImage1" alt="weather">
@@ -61,7 +74,7 @@
                 <p id="cardHum1" class="card-text"></p>
               </div>
             </section>
-            <section class="card text-white bg-primary" style="width: 7rem;">
+            <section class="card text-black bg-primary" style="width: 7rem;">
               <div class="card-body">
                 <h4 id="cardDate2" class="card-title"></h4>
                 <img id="cardImage2" alt="weather">
@@ -70,7 +83,7 @@
                 <p id="cardHum2" class="card-text"></p>
               </div>
             </section>
-            <section class="card text-white bg-primary" style="width: 7rem;">
+            <section class="card text-black bg-primary" style="width: 7rem;">
               <div class="card-body">
                 <h4 id="cardDate3" class="card-title"></h4>
                 <img id="cardImage3" alt="weather">
@@ -79,7 +92,7 @@
                 <p id="cardHum3" class="card-text"></p>
               </div>
             </section>
-            <section class="card text-white bg-primary" style="width: 7rem;">
+            <section class="card text-black bg-primary" style="width: 7rem;">
               <div class="card-body">
                 <h4 id="cardDate4" class="card-title"></h4>
                 <img id="cardImage4" alt="weather">
@@ -88,7 +101,7 @@
                 <p id="cardHum4" class="card-text"></p>
               </div>
             </section>
-            <section class="card text-white bg-primary" style="width: 7rem;">
+            <section class="card text-black bg-primary" style="width: 7rem;">
               <div class="card-body">
                 <h4 id="cardDate5" class="card-title"></h4>
                 <img id="cardImage5" alt="weather">
@@ -103,13 +116,13 @@
     </div>
     </div>
   </main>
+
+ 
   
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
