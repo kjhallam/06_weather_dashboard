@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5px;
 }
 h1{
     margin: 20px;
@@ -16,6 +17,9 @@ h1{
     font-size: 36px;
     border-bottom: 2rem;
 
+}
+li {
+    display: inline-block;
 }
 
 .input{

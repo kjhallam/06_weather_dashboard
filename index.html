@@ -47,24 +47,35 @@
         <div class="row forecastToday">
           <div class="container">
             <div class="row">
-              <h2 id="cityName" class="col-md-4"></h2>
-              <br>
-              <img id="currentImage" alt="Weather Image">
-              <br>
+              <h2 id="cityName" class="col-xs-12 d-flex flex-wrap"></h2>
+              <div class="col-md">
+              <p id="currentDay" class="lead"></p>
+              <p><img id="currentImage" alt="Weather Image"></p>
+              </div>
+              <div class="col-md">
               <li id="temp"></li>
-              <br>
+              <br><hr>
               <li id="humidity"></li>
-              <br>
+              <br><hr>
               <li id="windspeed"></li>
-              <br>
+              <br><hr>
               <li id="uvIndex"></li>
-              <br><br>
+            </div>
             </div>
           </div>
           <div class="row">
             <h3>5-Day Forecast:</h3>
           </div>
           <div class="row d-inline-flex">
+            <section class="card text-black bg-primary" style="width: 7rem;">
+              <div class="card-body">
+                <h4 id="cardDate0" class="card-title"></h4>
+                <img id="cardImage0" alt="weather">
+                <p id="cardTemp0" class="card-text">
+                </p>
+                <p id="cardHum0" class="card-text"></p>
+              </div>
+            </section>
             <section class="card text-black bg-primary" style="width: 7rem;">
               <div class="card-body">
                 <h4 id="cardDate1" class="card-title"></h4>
@@ -100,16 +111,7 @@
                 </p>
                 <p id="cardHum4" class="card-text"></p>
               </div>
-            </section>
-            <section class="card text-black bg-primary" style="width: 7rem;">
-              <div class="card-body">
-                <h4 id="cardDate5" class="card-title"></h4>
-                <img id="cardImage5" alt="weather">
-                <p id="cardTemp5" class="card-text">
-                </p>
-                <p id="cardHum5" class="card-text"></p>
-              </div>
-            </section>
+            </section>    
           </div>
         </div>
       </section>
@@ -119,8 +121,14 @@
 
  
   
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 
   <script src="./script.js"></script>
