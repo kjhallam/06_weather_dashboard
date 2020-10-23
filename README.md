@@ -22,4 +22,13 @@ ___________________________________________
 - WHEN I click on a city in the search history
 - THEN I am again presented with current and future conditions for that city
 - WHEN I open the weather dashboard
-- THEN I am presented with the last searched city forecast
+- THEN I am presented with the last searched city forecast.
+
+_______________________________________________________________________
+Issues (Project 6 Weather Dashboard)
+_______________________________________________________________________
+Faced many trials with rendering a weather dashboard that was displaying the 5 day Forecast.
+
+_______________________________________________________________________
+Image:
+![Weather-Dashboard](./assets/images/weather-dash.png "Weather-Dash SnipIt")
