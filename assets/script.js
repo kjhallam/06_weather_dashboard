@@ -37,19 +37,18 @@ function displayCity() {
     }
     //grabs the 1st list city and displays the function of weather    
     $("#cityName").text(locations[i]); 
-    // locationName = $("li").locations[i].innerHTML;
-    //getWeather(locationName);
+   
 };
 
 function getWeather (locationName) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + locationName + "&units=imperial&appid=ed2ee741f61d9d60983426ca204e9ed6";
-    // console.log(locationName)
     
 $.ajax ({
     url: queryURL,
+    
     method: "GET"
 }).then(function (response){
-    // console.log('RESPONSE OBJECT----->' , response);
+     console.log('RESPONSE OBJECT----->' , response);
     var lon2 = response.coord.lon;
     var lat2 = response.coord.lat;
     // console.log(lon2);
@@ -74,8 +73,8 @@ function getUV(lat, lon){
         url: queryURL,
         method: "GET",
     }).then(function (response){
-        
-        $("#uvIndex").text("UV Index: " + response.current.uvi);
+         $("#uvIndex").text("UV Index: " + response.current.uvi);
+
         var uvColor = response.value;
         if (uvColor > 0 && uvColor < 2) {
           uvSpan = "green";
@@ -136,10 +135,5 @@ $("button").on("click", function() {
     };
 })
 
-//   $("#button-addon").on("click", function (event){
-//     event.preventDefault();
-//   locationName = $(this).val().trim();
-//        getWeather(locationName);
 
-//   })
 })
