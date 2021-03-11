@@ -105,8 +105,8 @@ for(var i = 0; i < response.list.length; i++){
     console.log(response.list[i].dt_txt);
      var card = $('<section>').addClass("card text-black bg-primary text-white").attr("style", "width: 7rem;");
      var cardBody = $('<div>').addClass("card-body");
-    var cardDay = $('<h4>').addClass("card-title").text(moment.unix(response.list[i].dt).format("MM/DD/YYYY"));
-    var cardTemp = $('<p>').addClass('card-text').text("Temp:" + response.list[i].main.temp + "F");
+    var cardDay = $('<h6>').addClass("card-title").text(moment.unix(response.list[i].dt).format("MM/DD/YY"));
+    var cardTemp = $('<p>').addClass('card-text').text("Temp:" + " " + response.list[i].main.temp + "F");
     var cardHumidity = $('<p>').addClass("card-text").text("Humidity: " + response.list[i].main.humidity + "%");
     
     var cardImg = $('<img>').attr("src","http://openweathermap.org/img/w/" + image + ".png");
