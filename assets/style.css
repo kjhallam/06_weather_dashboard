@@ -55,11 +55,30 @@ input[type="submit"]{
 }
 
 .card {
-    margin: 0px;
+    margin: .75px;
+    background-image: linear-gradient(50DEG, whitesmoke, rgb(37, 33, 75));
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     display: inline-flex;
+    box-shadow: 0px 2px 3px 0px lightgray;
+    color: white;
+    text-shadow: 0px 0px 2px black;
+
        
 }
+
+.jumbotron {
+    background-image: url(./images/Weather-Background.jpg);
+    width: 97vw;
+    color: lightgray;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 72px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px black;
+    box-shadow: 0px 0px 1px 3px lightgray;
+}
+
 
 #currentWeather {
     display: flex-inline;
@@ -67,7 +86,12 @@ input[type="submit"]{
     border-bottom: 1rem;
     border-left: 1rem;
     border-color: lightgray;
-    border-radius: 3px;
+    border-width: 3px;
+    border-radius: 10px;
     list-style: none;
 
+}
+
+#currentImage {
+    width: 10vw;
 }
