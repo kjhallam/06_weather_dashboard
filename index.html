@@ -31,7 +31,10 @@
               <div class="row">
                 <input id="searchInput" type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon">
                 <div class="input-group-append">
-                  <button class="btn btn-primary" type="button" id="button-addon">Search</button>
+                  <button class="btn btn-primary" type="button" id="button-addon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg></button>
+                  
                 </div>
               </div>
             </div>
@@ -47,8 +50,8 @@
         <div class="row forecastToday">
           <div class="container">
             <div class="row">
-              <h2 id="cityName" class="col-xs-12 d-flex flex-wrap"></h2>
               <div class="col-md">
+              <h3 id="cityName" class="col-xs-12 d-flex flex-wrap"></h3>
               <p id="currentDay" class="lead"></p>
               <p><img id="currentImage" class="hide" alt="Weather Image"></p>
               </div>
@@ -64,7 +67,7 @@
             </div>
           </div>
           <div class="row">
-            <h3>5-Day Forecast:</h3>
+            <h4>5-Day Forecast:</h4>
           </div>
           <div id="cards" class="row d-inline-flex">
      
